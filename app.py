@@ -274,12 +274,17 @@ def dashboard():
     user = get_user_details(session['user_email'])
     if user:
         appointments = get_user_appointments(session['user_email'])
-        return render_template('dashboard.html',
+        print(appointments)
+        return render_template('main_dashboard.html',
                              user=user,
                              appointments=appointments,
                              doctors=DOCTORS,
                              time_slots=TIME_SLOTS)
     return redirect(url_for('logout'))
+
+
+
+
 
 @app.route('/book_appointment', methods=['POST'])
 @login_required
@@ -298,7 +303,6 @@ def book_appointment():
         session['user_email'],
         f"{user['First_Name']} {user['Last_Name']}"
     )
-
     flash(message)
     if success:
         logger.info(f"Appointment booked for {session['user_email']}")
@@ -378,3 +382,80 @@ def startup_check():
             raise PermissionError("Cannot access required files")
         initialize_csv_files()
         app._got_first_request = True
+
+
+@app.route('/main_dashboard')
+@login_required
+def main_dashboard():
+    user = get_user_details(session['user_email'])
+    if user:
+        appointments = get_user_appointments(session['user_email'])
+        return render_template('main_dashboard.html',
+                             user=user,
+                             appointments=appointments,
+                             doctors=DOCTORS,
+                             time_slots=TIME_SLOTS)
+    return redirect(url_for('logout'))
+
+
+@app.route('/account')
+@login_required
+def account():
+    global user
+    user = get_user_details(session['user_email'])
+    if user:
+        appointments = get_user_appointments(session['user_email'])
+        return render_template('account.html',
+                             user=user,
+                             appointments=appointments,
+                             doctors=DOCTORS,
+                             time_slots=TIME_SLOTS)
+
+@app.route('/billing')
+@login_required
+def billing():
+    global user
+    user = get_user_details(session['user_email'])
+    if user:
+        appointments = get_user_appointments(session['user_email'])
+        return render_template('billing.html',
+                             user=user,
+                             appointments=appointments,
+                             doctors=DOCTORS,
+                             time_slots=TIME_SLOTS)
+    return redirect(url_for('logout'))
+
+
+@app.route('/prescriptions')
+@login_required
+def prescriptions():
+    global user
+    if user:
+        return render_template('prescriptions.html',
+                             user=user,
+                             doctors=DOCTORS,
+                             time_slots=TIME_SLOTS)
+    return redirect(url_for('logout'))
+
+  
+
+@app.route('/appointments')
+@login_required
+def appointments():
+    global user
+    user = get_user_details(session['user_email'])
+    if user:
+        appointments = get_user_appointments(session['user_email'])
+        return render_template('appointments.html',
+                             user=user,
+                             appointments=appointments,
+                             doctors=DOCTORS,
+                             time_slots=TIME_SLOTS)
+    return redirect(url_for('logout'))
+
+
+
+
+
+
+app.run()

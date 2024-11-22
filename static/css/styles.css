@@ -251,4 +251,127 @@
   tbody td:last-child.pending {
     color: red;
   }
-  
+  /* General Styling */
+
+
+h3.mt-4 {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color:  #004aad;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}
+
+label.form-label {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+select.form-select {
+  width: 100%;
+  padding: 5px;
+  font-size: 1rem;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: border-color 0.2s ease-in-out;
+}
+
+select.form-select:focus {
+  outline: none;
+  border-color: #0066cc;
+}
+
+button.btn-primary {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0066cc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-primary:hover {
+  background-color: #004999;
+}
+
+/* Responsive Styling */
+.row.g-3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.col-md-6 {
+  flex: 0 0 calc(50% - 20px);
+  max-width: calc(50% - 20px);
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* Container for consistent spacing */
+.container {
+  padding: 20px;
+  background-color: #f7f9fc;
+}
+
+/* Styling for Edit Profile Section */
+.edit-profile {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f7f9fc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-profile h4 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.edit-profile button {
+  color: #0066cc;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.edit-profile button:hover {
+  text-decoration: underline;
+}
+
+.edit-profile .btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-profile .btn-danger:hover {
+  background-color: #b02a37;
+}
+
+.edit-profile .collapse {
+  margin-top: 15px;
+}

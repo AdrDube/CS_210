@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Appointments Page</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
   <div class="container">
@@ -17,18 +17,18 @@
       <aside class="sidebar">
         <p>Welcome, <b>Bruce!</b></p>
         <ul>
-          <li><span>👤</span> Account</li>
-          <li><span>💳</span> Billing</li>
-          <li><span>🔒</span> Prescriptions</li>
-          <li><span>📅</span> Appointments</li>
-          <li><span>📞</span> Consultations</li>
-          <li><span>🌐</span> Language</li>
-        </ul>
+          <li><a href="{{ url_for('account') }}"><span>👤</span> Account</a></li>
+          <li><a href="{{ url_for('billing') }}"><span>💳</span> Billing</a></li>
+          <li><a href="{{ url_for('prescriptions') }}"><span>🔒</span> Prescriptions</a></li>
+          <li><a href="{{ url_for('appointments') }}"><span>📅</span> Appointments</a></li>
+
+      </ul>
       </aside>
       <section class="content">
         <h2>Appointments</h2>
         <div class="appointment-table">
           <h3>Upcoming Appointments</h3>
+          {% if appointments %}
           <table>
             <thead>
               <tr>
@@ -39,18 +39,16 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              {% for appointment in appointments %}
                 <td>12/17/2024</td>
-                <td>Dr. Smith</td>
-                <td>11/20/2024</td>
-                <td>10:00 AM</td>
+                <td>{{ appointment.Doctor}}</td>
+                <td>{{appointment.Booking_Time}}</td>
+                <td>{{ appointment.Time }}</td>
               </tr>
-              <tr>
-                <td>12/18/2024</td>
-                <td>Dr. Stace</td>
-                <td>11/21/2024</td>
-                <td>12:30 PM</td>
-              </tr>
+              {% endfor %}
+          {% else %}
+              <p>No appointments scheduled.</p>
+          {% endif %}
             </tbody>
           </table>
         </div>
@@ -87,5 +85,6 @@
       </nav>
     </footer>
   </div>
+
 </body>
 </html>

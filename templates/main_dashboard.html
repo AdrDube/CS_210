@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EyeCare Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <h1>EyeCare</h1>
+      </div>
+    </header>
+    <main>
+      <aside class="sidebar">
+        <p>Welcome, <b> Welcome {{ user['First_Name'] }} {{ user['Last_Name'] }}</b></p>
+        <ul>
+          <li><a href="{{ url_for('account') }}"><span>👤</span> Account</a></li>
+          <li><a href="{{ url_for('billing') }}"><span>💳</span> Billing</a></li>
+          <li><a href="{{ url_for('prescriptions') }}"><span>🔒</span> Prescriptions</a></li>
+          <li><a href="{{ url_for('appointments') }}"><span>📅</span> Appointments</a></li>
+      </ul>
+      </aside>
+      <section class="content">
+        <div class="appointments">
+          <div class="upcoming">
+            <h2>Upcoming Appointments</h2>
+            {% if appointments %}
+              {% for appointment in appointments %}
+                <p>
+                  <strong>{{appointment.Doctor}}</strong><br>
+                  at {{appointment.Time}}
+                </p>
+              {% endfor %}
+            {% else %}
+                <p>No appointments scheduled.</p>
+            {% endif %}
+          </div>
+          <div class="previous">
+            <h2>Previous Appointments</h2>
+            <p>No information available at the moment.</p>
+          </div>
+        </div>
+  
+        <div class="prescriptions">
+          <h2>Prescriptions</h2>
+          <div class="prescription-item">
+            <p><strong>5mm of benzene ethane</strong><br>Times to take per day: 2</p>
+          </div>
+          <div class="prescription-item">
+            <p><strong>10mm of ezanoic</strong><br>Times to take per day: 3</p>
+          </div>
+          <div class="prescription-item">
+            <p><strong>Eye drops</strong><br>After every 3 hrs</p>
+          </div>
+        </div>
+  
+        <div class="book">
+          <h2>Book Appointments</h2>
+          <form method="POST" action="{{ url_for('book_appointment') }}" class="row g-3">
+            <div class="col-md-6">
+                <label for="doctor" class="form-label">Select Doctor</label>
+                <select class="form-select" id="doctor" name="doctor" required onchange="updateTimeSlots()">
+                    <option value="">Choose...</option>
+                    {% for doctor in doctors %}
+                        <option value="{{ doctor }}">{{ doctor }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="time_slot" class="form-label">Select Time</label>
+                <select class="form-select" id="time_slot" name="time_slot" required>
+                    <option value="">Choose a doctor first</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Book Appointment</button>
+            </div>
+          </form>
+        </div>
+      </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Dube Production</p>
+    <nav>
+      <a href="#">Contact Us</a>
+      <a href="#">Company</a>
+      <a href="#">Support</a>
+      <a href="#">Legal</a>
+    </nav>
+  </footer>
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function updateTimeSlots() {
+    const doctor = document.getElementById('doctor').value;
+    const timeSlotSelect = document.getElementById('time_slot');
+
+    if (doctor) {
+      fetch(`/get_available_slots/${doctor}`)
+        .then(response => response.json())
+        .then(data => {
+          timeSlotSelect.innerHTML = '<option value="">Choose...</option>';
+          data.slots.forEach(slot => {
+            const option = document.createElement('option');
+            option.value = slot;
+            option.textContent = slot;
+            timeSlotSelect.appendChild(option);
+                        });
+                    });
+      } else {
+          timeSlotSelect.innerHTML = '<option value="">Choose a doctor first</option>';
+        }
+      }
+</script>
+
+</body>
+</html
+
+
+ 
+

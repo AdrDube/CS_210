@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Billing Page</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
   <div class="container">
@@ -16,14 +16,13 @@
     </header>
     <main>
       <aside class="sidebar">
-        <p>Welcome, <b>Bruce!</b></p>
+        <p>Welcome, <b>{{ user['First_Name'] }}</b></p>
         <ul>
-          <li><span>👤</span> Account</li>
-          <li><span>💳</span> Billing</li>
-          <li><span>🔒</span> Prescriptions</li>
-          <li><span>📅</span> Appointments</li>
-          <li><span>📞</span> Consultations</li>
-          <li><span>🌐</span> Language</li>
+          <li><a href="{{ url_for('account') }}"><span>👤</span> Account</a></li>
+          <li><a href="{{ url_for('billing') }}"><span>💳</span> Billing</a></li>
+          <li><a href="{{ url_for('prescriptions') }}"><span>🔒</span> Prescriptions</a></li>
+          <li><a href="{{ url_for('appointments') }}"><span>📅</span> Appointments</a></li>
+
         </ul>
       </aside>
       <section class="content">
@@ -114,19 +113,17 @@
         </tbody>
       </table>
     </div>
+
+    </main>
+    <footer>
+      <p>&copy; 2024 Dube Production</p>
+      <nav>
+        <a href="#">Contact Us</a>
+        <a href="#">Company</a>
+        <a href="#">Support</a>
+        <a href="#">Legal</a>
+      </nav>
+    </footer>
   </div>
-
-</main>
-<footer>
-  <p>&copy; 2024 Dube Production</p>
-  <nav>
-    <a href="#">Contact Us</a>
-    <a href="#">Company</a>
-    <a href="#">Support</a>
-    <a href="#">Legal</a>
-  </nav>
-</footer>
-</div>
-
 </body>
 </html>
