@@ -1,0 +1,272 @@
+{
+  "patients": [
+    {
+      "patient_id": "12345",
+      "name": "John Doe",
+      "dob": "1980-05-15",
+      "contact": {
+        "phone": "555-123-4567",
+        "email": "johndoe@example.com"
+      },
+      "prescriptions": [
+        {
+          "prescription_id": "Rx123456",
+          "medication": {
+            "name": "Amoxicillin",
+            "dosage": "500 mg",
+            "frequency": "3 times a day",
+            "duration": "7 days"
+          },
+          "prescribed_by": {
+            "doctor_id": "Dr123",
+            "name": "Dr. Smith",
+            "contact": "drsmith@exampleclinic.com"
+          },
+          "date_prescribed": "2024-11-20",
+          "refills": 1,
+          "pharmacy": {
+            "name": "Best Pharmacy",
+            "address": "123 Main St, Grambling, LA"
+          }
+        },
+        {
+          "prescription_id": "Rx789012",
+          "medication": {
+            "name": "Ibuprofen",
+            "dosage": "200 mg",
+            "frequency": "as needed",
+            "duration": "10 days"
+          },
+          "prescribed_by": {
+            "doctor_id": "Dr123",
+            "name": "Dr. Smith",
+            "contact": "drsmith@exampleclinic.com"
+          },
+          "date_prescribed": "2024-11-20",
+          "refills": 0,
+          "pharmacy": {
+            "name": "Best Pharmacy",
+            "address": "123 Main St, Grambling, LA"
+          }
+        }
+      ]
+    },
+    {
+      "patient_id": "67890",
+      "name": "Jane Smith",
+      "dob": "1975-09-10",
+      "contact": {
+        "phone": "555-987-6543",
+        "email": "janesmith@example.com"
+      },
+      "prescriptions": [
+        {
+          "prescription_id": "Rx234567",
+          "medication": {
+            "name": "Metformin",
+            "dosage": "850 mg",
+            "frequency": "2 times a day",
+            "duration": "30 days"
+          },
+          "prescribed_by": {
+            "doctor_id": "Dr456",
+            "name": "Dr. Brown",
+            "contact": "drbrown@exampleclinic.com"
+          },
+          "date_prescribed": "2024-11-18",
+          "refills": 2,
+          "pharmacy": {
+            "name": "Health Pharmacy",
+            "address": "456 Elm St, Grambling, LA"
+          }
+        }
+      ]
+    },
+    {
+      "patient_id": "11223",
+      "name": "Robert Johnson",
+      "dob": "1965-08-20",
+      "contact": {
+        "phone": "555-321-1234",
+        "email": "robertj@example.com"
+      },
+      "prescriptions": [
+        {
+          "prescription_id": "Rx345678",
+          "medication": {
+            "name": "Lisinopril",
+            "dosage": "10 mg",
+            "frequency": "once a day",
+            "duration": "30 days"
+          },
+          "prescribed_by": {
+            "doctor_id": "Dr789",
+            "name": "Dr. White",
+            "contact": "drwhite@exampleclinic.com"
+          },
+          "date_prescribed": "2024-11-15",
+          "refills": 3,
+          "pharmacy": {
+            "name": "Care Pharmacy",
+            "address": "789 Maple St, Grambling, LA"
+          }
+        }
+      ]
+    },
+    {
+      "patient_id": "22334",
+      "name": "Emily Davis",
+      "dob": "1990-12-05",
+      "contact": {
+        "phone": "555-654-9870",
+        "email": "emilyd@example.com"
+      },
+      "prescriptions": [
+        {
+          "prescription_id": "Rx456789",
+          "medication": {
+            "name": "Amlodipine",
+            "dosage": "5 mg",
+            "frequency": "once a day",
+            "duration": "30 days"
+          },
+          "prescribed_by": {
+            "doctor_id": "Dr321",
+            "name": "Dr. Green",
+            "contact": "drgreen@exampleclinic.com"
+          },
+          "date_prescribed": "2024-11-10",
+          "refills": 1,
+          "pharmacy": {
+            "name": "Wellness Pharmacy",
+            "address": "101 Oak St, Grambling, LA"
+          }
+        }
+      ]
+    },
+    {
+      "patient_id": "33445",
+      "name": "Michael Brown",
+      "dob": "1985-07-15",
+      "contact": {
+        "phone": "555-789-0123",
+        "email": "michaelb@example.com"
+      },
+      "prescriptions": [
+        {
+          "prescription_id": "Rx567890",
+          "medication": {
+            "name": "Hydrochlorothiazide",
+            "dosage": "25 mg",
+            "frequency": "once a day",
+            "duration": "30 days"
+          },
+          "prescribed_by": {
+            "doctor_id": "Dr654",
+            "name": "Dr. Blue",
+            "contact": "drblue@exampleclinic.com"
+          },
+          "date_prescribed": "2024-11-12",
+          "refills": 2,
+          "pharmacy": {
+            "name": "City Pharmacy",
+            "address": "202 Pine St, Grambling, LA"
+          }
+        }
+      ]
+    },
+    {
+      "patient_id": "44556",
+      "name": "Nancy Wilson",
+      "dob": "1978-03-20",
+      "contact": {
+        "phone": "555-890-3456",
+        "email": "nancyw@example.com"
+      },
+      "prescriptions": [
+        {
+          "prescription_id": "Rx678901",
+          "medication": {
+            "name": "Atorvastatin",
+            "dosage": "20 mg",
+            "frequency": "once a day",
+            "duration": "30 days"
+          },
+          "prescribed_by": {
+            "doctor_id": "Dr987",
+            "name": "Dr. Black",
+            "contact": "drblack@exampleclinic.com"
+          },
+          "date_prescribed": "2024-11-05",
+          "refills": 2,
+          "pharmacy": {
+            "name": "Neighborhood Pharmacy",
+            "address": "303 Cedar St, Grambling, LA"
+          }
+        }
+      ]
+    },
+    {
+      "patient_id": "55667",
+      "name": "David Moore",
+      "dob": "1982-01-25",
+      "contact": {
+        "phone": "555-012-6789",
+        "email": "davidm@example.com"
+      },
+      "prescriptions": [
+        {
+          "prescription_id": "Rx789012",
+          "medication": {
+            "name": "Metoprolol",
+            "dosage": "50 mg",
+            "frequency": "twice a day",
+            "duration": "30 days"
+          },
+          "prescribed_by": {
+            "doctor_id": "Dr321",
+            "name": "Dr. Yellow",
+            "contact": "dryellow@exampleclinic.com"
+          },
+          "date_prescribed": "2024-11-01",
+          "refills": 1,
+          "pharmacy": {
+            "name": "Community Pharmacy",
+            "address": "404 Birch St, Grambling, LA"
+          }
+        }
+      ]
+    },
+    {
+      "patient_id": "66778",
+      "name": "Jessica Taylor",
+      "dob": "1989-06-30",
+      "contact": {
+        "phone": "555-678-2345",
+        "email": "jessicat@example.com"
+      },
+      "prescriptions": [
+        {
+          "prescription_id": "Rx890123",
+          "medication": {
+            "name": "Levothyroxine",
+            "dosage": "75 mcg",
+            "frequency": "once a day",
+            "duration": "30 days"
+          },
+          "prescribed_by": {
+            "doctor_id": "Dr654",
+            "name": "Dr. Purple",
+            "contact": "drpurple@exampleclinic.com"
+          },
+          "date_prescribed": "2024-11-18",
+          "refills": 1,
+          "pharmacy": {
+            "name": "Pharmacy Plus",
+            "address": "505 Spruce St, Grambling, LA"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,4 @@
-Doctor,Time,Patient_Email,Patient_Name
+Doctor,Time,Patient_Email,Patient_Name,Booking_Time
+Dr. Williams,11:00,shadrackawuahboakye@gmail.com,Shadrack Boakye,2024-11-22 00:58:07
+Dr. Williams,16:30,shadrackawuahboakye@gmail.com,Shadrack Boakye,2024-11-22 01:01:49
+Dr. Smith,11:30,shadrackawuahboakye@gmail.com,Shadrack Boakye,2024-11-22 01:41:13

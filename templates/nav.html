@@ -1,0 +1,59 @@
+<!--templates/nav.html-->
+
+
+<nav class="col-md-3 col-lg-2 d-md-block ">
+    <div class="position-sticky sidebar sidenav">
+        <h4>{{ user['First_Name'] }} {{ user['Last_Name'] }}</h4>
+        <ul>
+            <li>
+<!--                <img-->
+<!--                        src="{{ url_for('static', filename='money-bag-svgrepo-com.svg') }}" height="40px" width="40px">-->
+                <a href="/">Home </a></li>
+            <li class=""><a href="{{ url_for('billing') }}">
+<!--                <img-->
+<!--                        src="{{ url_for('static', filename='money-bag-svgrepo-com.svg') }}" height="40px" width="40px">-->
+                Billing </a>
+            </li>
+            <li class="menu-item">
+                <a href="{{ url_for('prescription')}}">
+                    <span>🔒</span> Prescriptions
+                </a>
+            </li>
+        </ul>
+        <div class="mb-3">
+            <button class="btn btn-link text-decoration-none" data-bs-toggle="collapse" data-bs-target="#profileForm">
+                Edit Profile
+            </button>
+        </div>
+        <div class="mb-3">
+            <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+        </div>
+
+        <!-- Profile Edit Form -->
+        <div class="collapse" id="profileForm">
+            <form method="POST" action="{{ url_for('update_profile') }}">
+                <div class="mb-3">
+                    <label for="edit_first_name" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="edit_first_name" name="first_name"
+                           value="{{ user['First_Name'] }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="edit_last_name" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="edit_last_name" name="last_name"
+                           value="{{ user['Last_Name'] }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="edit_mobile" class="form-label">Mobile</label>
+                    <input type="tel" class="form-control" id="edit_mobile" name="mobile"
+                           value="{{ user['Mobile_Number'] }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="edit_address" class="form-label">Address</label>
+                    <textarea class="form-control" id="edit_address" name="address"
+                              rows="3" required>{{ user['Address'] }}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Profile</button>
+            </form>
+        </div>
+    </div>
+</nav>

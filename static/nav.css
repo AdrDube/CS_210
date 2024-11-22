@@ -1,0 +1,86 @@
+  .sidebar {
+   padding: 3.5rem 0px 0px 1rem ;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    display:flex;
+    flex-direction:column;
+    justify:center;
+
+
+  }
+
+  li{
+  list-style-type:none
+  }
+
+
+  .sidebar ul li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .sidebar ul li span {
+    margin-right: 0.5rem;
+  }
+
+
+  a{
+  text-decoration : none;
+  color : none
+  }
+
+  .menu-item{
+  height: 1rem;
+
+  width: full;
+  background:gray:
+  }
+
+  /* Basic reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Sidenav styling */
+.sidenav {
+    height: 100%; /* Full-height */
+    width: 250px; /* Set the width of the sidenav */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #fff; /* Light gray background */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px; /* Add some padding on top */
+}
+
+.sidenav a {
+    padding: 15px 20px; /* Add padding */
+    margin: 5px 0 5px 0;
+
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Increase font size */
+    color: #333; /* Dark gray text color */
+    display: block; /* Make the links appear below each other */
+    transition: 0.3s; /* Smooth transition for hover effects */
+    border-left: 4px solid transparent; /* Add transparent border for active state */
+}
+
+.sidenav a:hover {
+    background-color: #ddd; /* Darker gray on hover */
+    color: #000; /* Black text color on hover */
+}
+
+.sidenav a.active {
+    background-color: #ccc; /* Even darker gray for active state */
+    color: #000; /* Black text color for active state */
+    border-left: 4px solid #333; /* Dark gray border for active link */
+}
+
+.main {
+    margin-left: 260px; /* Same width as the sidenav plus a bit of extra space */
+    padding: 16px; /* Add some padding */
+}
