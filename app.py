@@ -184,7 +184,7 @@ def book_appointment_helper(doctor, time_slot, user_email, user_name):
 @app.route('/')
 def index():
     if 'user_email' in session:
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('main_dashboard'))
     return redirect(url_for('login'))
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -252,14 +252,13 @@ def login():
                 session['user_email'] = email
                 logger.info(f"Successful login for user: {email}")
                 flash('Logged in successfully!')
-                return redirect(url_for('dashboard'))
+                return redirect(url_for('main_dashboard'))
             else:
                 logger.warning(f"Invalid credentials for email: {email}")
                 flash('Invalid email or password')
         except Exception as e:
             logger.error(f"Login error: {e}")
             flash('An error occurred during login. Please try again.')
-
     return render_template('login.html')
 
 @app.route('/logout')
@@ -295,7 +294,7 @@ def book_appointment():
 
     if not user:
         flash('User details not found.')
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('login'))
 
     success, message = book_appointment_helper(
         doctor,
@@ -309,7 +308,7 @@ def book_appointment():
     else:
         logger.error(f"Failed to book appointment: {message}")
 
-    return redirect(url_for('dashboard'))
+    return redirect(url_for('appointments'))
 
 @app.route('/update_profile', methods=['POST'])
 @login_required
@@ -320,13 +319,12 @@ def update_profile():
         'Mobile_Number': request.form['mobile'].strip(),
         'Address': request.form['address'].strip()
     }
-
     if update_user_details(session['user_email'], details):
         flash('Profile updated successfully!')
     else:
         flash('Failed to update profile')
 
-    return redirect(url_for('dashboard'))
+    return redirect(url_for('account'))
 
 @app.route('/get_available_slots/<doctor>')
 def available_slots(doctor):
@@ -401,7 +399,6 @@ def main_dashboard():
 @app.route('/account')
 @login_required
 def account():
-    global user
     user = get_user_details(session['user_email'])
     if user:
         appointments = get_user_appointments(session['user_email'])
@@ -442,7 +439,6 @@ def prescriptions():
 @app.route('/appointments')
 @login_required
 def appointments():
-    global user
     user = get_user_details(session['user_email'])
     if user:
         appointments = get_user_appointments(session['user_email'])

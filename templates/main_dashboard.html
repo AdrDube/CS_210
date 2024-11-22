@@ -14,9 +14,17 @@
       </div>
     </header>
     <main>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          {% for message in messages %}
+              <div class="alert alert-info">{{ message }}</div>
+          {% endfor %}
+      {% endif %}
+      {% endwith %}
       <aside class="sidebar">
-        <p>Welcome, <b> Welcome {{ user['First_Name'] }} {{ user['Last_Name'] }}</b></p>
+        <p>Welcome, <b> {{ user['First_Name'] }} {{ user['Last_Name'] }}</b></p>
         <ul>
+          <li><a href="{{ url_for('main_dashboard') }}">Main Menu</a></li>
           <li><a href="{{ url_for('account') }}"><span>👤</span> Account</a></li>
           <li><a href="{{ url_for('billing') }}"><span>💳</span> Billing</a></li>
           <li><a href="{{ url_for('prescriptions') }}"><span>🔒</span> Prescriptions</a></li>

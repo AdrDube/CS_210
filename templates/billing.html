@@ -18,6 +18,7 @@
       <aside class="sidebar">
         <p>Welcome, <b>{{ user['First_Name'] }}</b></p>
         <ul>
+          <li><a href="{{ url_for('main_dashboard') }}">Main Menu</a></li>
           <li><a href="{{ url_for('account') }}"><span>👤</span> Account</a></li>
           <li><a href="{{ url_for('billing') }}"><span>💳</span> Billing</a></li>
           <li><a href="{{ url_for('prescriptions') }}"><span>🔒</span> Prescriptions</a></li>

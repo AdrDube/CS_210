@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Appointments Page</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="container">
@@ -14,9 +15,17 @@
       </div>
     </header>
     <main>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+          {% for message in messages %}
+              <div class="alert alert-info">{{ message }}</div>
+          {% endfor %}
+      {% endif %}
+      {% endwith %}
       <aside class="sidebar">
-        <p>Welcome, <b>Bruce!</b></p>
+        <p>Welcome, <b>{{ user['First_Name'] }}</b></p>
         <ul>
+          <li><a href="{{ url_for('main_dashboard') }}">Main Menu</a></li>
           <li><a href="{{ url_for('account') }}"><span>👤</span> Account</a></li>
           <li><a href="{{ url_for('billing') }}"><span>💳</span> Billing</a></li>
           <li><a href="{{ url_for('prescriptions') }}"><span>🔒</span> Prescriptions</a></li>
