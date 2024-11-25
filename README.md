@@ -32,6 +32,7 @@ This is a **Flask-based system** that enables users to log in, book appointments
    ```bash
    git clone https://github.com/AdrDube/CS_210.git
    cd CS_210
+   git checkout dashboard
    ```
 
 2. **Install dependencies**:
