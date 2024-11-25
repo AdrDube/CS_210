@@ -1,7 +1,7 @@
 
 # Dashboard
 
-This is a **Flask-based appointment booking system** that enables users to register, log in, book appointments with doctors, and manage their profiles. The system leverages CSV files for storing user data and appointment details.
+This is a **Flask-based system** that enables users to log in, book appointments with doctors, and manage their profiles. The system stores user data and appointment details in CSV files.
 
 ## Features
 
