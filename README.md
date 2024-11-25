@@ -30,8 +30,8 @@ This is a **Flask-based system** that enables users to log in, book appointments
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
-   cd <project-directory>
+   git clone https://github.com/AdrDube/CS_210.git
+   cd CS_210
    ```
 
 2. **Install dependencies**:
