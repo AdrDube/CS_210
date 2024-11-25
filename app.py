@@ -378,3 +378,4 @@ def startup_check():
             raise PermissionError("Cannot access required files")
         initialize_csv_files()
         app._got_first_request = True
+app.run(debug=True)
