@@ -389,6 +389,11 @@ def prescription():
     # return render_template("prescription.html", data=prescriptions_json['prescriptions'])
 
 
+@app.route("/account")
+def account():
+    user = get_user_details(session['user_email'])
+    return render_template("account.html", user=user)
+
 @app.route('/api/appointments')
 def get_appointments_api():
     try:

@@ -2,6 +2,8 @@
 
 
 <nav class="col-md-3 col-lg-2 d-md-block ">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
     <div class="position-sticky sidebar sidenav">
         <h4>{{ user['First_Name'] }} {{ user['Last_Name'] }}</h4>
         <ul>
@@ -14,17 +16,23 @@
 <!--                        src="{{ url_for('static', filename='money-bag-svgrepo-com.svg') }}" height="40px" width="40px">-->
                 Billing </a>
             </li>
-            <li class="menu-item">
+            <li class="">
                 <a href="{{ url_for('prescription')}}">
-                    <span>🔒</span> Prescriptions
+                    Prescriptions
                 </a>
             </li>
+              <li class="mt-4">
+                <a href="{{ url_for('account')}}">
+                    Account
+                </a>
+            </li>
+
         </ul>
-        <div class="mb-3">
+        <DIV class="mb-3 mt-4">
             <button class="btn btn-link text-decoration-none" data-bs-toggle="collapse" data-bs-target="#profileForm">
                 Edit Profile
             </button>
-        </div>
+        </DIV>
         <div class="mb-3">
             <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
         </div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='nav.css')}}"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <div class="">
+    <header>
+      <div class="logo">
+        <h1>EyeCare</h1>
+      </div>
+    </header>
+    <main>
+    {% include 'nav.html' %}
+      <section class="content">
+        <h2>Account Information</h2>
+        <div class="account-info">
+          <div class="info-item">
+            <strong>Name:</strong>
+            <p>{{user['First_Name']}}</p>
+          </div>
+          <div class="info-item">
+            <strong>Surname:</strong>
+            <p>{{user['Last_Name']}}</p>
+          </div>
+          <div class="info-item">
+            <strong>Email:</strong>
+            <p>{{user['Email']}}</p>
+          </div>
+          <div class="info-item">
+            <strong>Address:</strong>
+            <p>1007 Mountain Drive, Gotham</p>
+          </div>
+          <div class="info-item">
+            <strong>Contact Detail:</strong>
+            <p>{{user['Mobile_Number']}}</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</body>
+</html>
